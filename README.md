@@ -1,0 +1,1 @@
+A prendendo sobre o framework laravel e o phpUnit consutruindo um app web de controle de series.
