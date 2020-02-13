@@ -3,7 +3,7 @@
 <div align="center">
     
 ### Lista de Series
-
+A estilização foi feita com o bootstrap.
 
 <img align="" width="50%" height="50%" src="images/ListSeries.jpg">
 
