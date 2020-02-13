@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'SeriesController@index');
+Route::get('/series/create', 'SeriesController@create');

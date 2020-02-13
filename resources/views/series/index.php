@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
-    <title>Controle de series</title>
+    <title>Control for Series and Movies</title>
   </head>
   <body>
     <header>
@@ -24,7 +24,7 @@
             
             <h3 style="color: white;" >
               <i class="material-icons mr-3" style="color: white;">live_tv</i> 
-              Control series
+              Control for Series and Movies
             </h3>
           </div>
         </a>
@@ -32,17 +32,19 @@
     </header>
     <main class="container">
       <ul class="list-group rounded shadow-lg p-5">
-        <h4 class="text-center mb-3">Lista de filmes e series</h4>
+        <h4 class="text-center mb-3">List all Series and Movies</h4>
         <?php foreach($series as $serie): ?>
           <li class="list-group-item">
             <?= $serie; ?>
           </li>
         <?php  endforeach; ?>
         <div class="d-flex flex-row mt-4 justify-content-end">
-          <button 
+          <!-- <a ="http://"></a> -->
+          <a 
+            href="/series/create"
             type="button" 
-            class="btn btn-dark"
-          >Adicionar nova serie</button>
+            class="btn btn-dark text-white"
+          >Add new serie</a>
 
         </div>
       </ul>
