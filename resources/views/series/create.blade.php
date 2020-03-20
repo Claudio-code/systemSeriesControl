@@ -6,22 +6,23 @@
       Create new Register for movie and serie
     </h3>
     <form action="" method="post">
-      
+      @csrf
       <div class="form-group">
         <label for="nameRegister">Name</label>
-        <input 
-          type="text" 
-          required 
-          class="form-control" 
+        <input
+          type="text"
+          required
+          class="form-control"
+          name="nome"
           id="nameRegister"
           placeholder="Ex: Star Wars, The Lost"
         >
         <small class="form-text text-muted">
-          Fill in field with serie or movie name 
+          Fill in field with serie or movie name
         </small>
       </div>
-      <button 
-        type="submit" 
+      <button
+        type="submit"
         class="btn btn-success"
       >Create new Register</button>
 
