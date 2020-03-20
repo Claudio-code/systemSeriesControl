@@ -10,24 +10,24 @@ class SeriesController extends Controller
 
   public function index(Request $request): string
   {
-    try {
+        try {
 
-      $series = Serie::query()
-          ->orderBy('nome')
-          ->get();
+              $series = Serie::query()
+                  ->orderBy('nome')
+                  ->get();
 
-      $messages = $request->session()->get('mensagem');
+              $messages = $request->session()->get('mensagem');
 
-      return view('series.index', compact('series', 'messages'));
+              return view('series.index', compact('series', 'messages'));
 
-    } catch (\Exception $e) {
+        } catch (\Exception $e) {
 
-      return json_encode(array(
-        'code' => $e->getCode(),
-        'message' => $e->getMessage(),
-        'file' => $e->getFile()
-      ));
-    }
+              return json_encode(array(
+                    'code' => $e->getCode(),
+                    'message' => $e->getMessage(),
+                    'file' => $e->getFile()
+              ));
+        }
   }
 
   public function create()
@@ -38,14 +38,26 @@ class SeriesController extends Controller
   public function store(Request $request)
   {
 
-    $serie = Serie::create($request->all());
+        $serie = Serie::create($request->all());
 
-    $request->session()
-        ->flash(
-            'mensagem',
-            "Serie {$serie->id} criada com sucesso {$serie->nome}"
-        );
+        $request->session()
+            ->flash(
+                'mensagem',
+                "Serie {$serie->id} criada com sucesso {$serie->nome}"
+            );
 
-    return redirect('/');
+        return redirect('/');
+  }
+
+  public function destroy(Request $request)
+  {
+      Serie::destroy($request->id);
+      $request->session()
+          ->flash(
+              'mensagem',
+              "Serie removida"
+          );
+
+      return redirect('/');
   }
 }

@@ -13,8 +13,15 @@
     @endif
 
   @foreach($series as $serie)
-    <li class="list-group-item">
-      {{ $serie->nome }}
+    <li class="list-group-item d-flex justify-content-between flex-row">
+        <p>{{ $serie->nome }}</p>
+        {{$serie->id}}
+        <form method="post" action="/series/remover/{{$serie->id}}">
+            @csrf
+            <button class="btn btn-danger">
+                Remover
+            </button>
+        </form>
     </li>
   @endforeach
 
