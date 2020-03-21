@@ -1,4 +1,4 @@
-## A prendendo sobre o framework laravel e consutruindo um app web de controle de series.
+## Aprendendo sobre o framework laravel e consutruindo um app web de controle de series.
 
 <div align="center">
     
